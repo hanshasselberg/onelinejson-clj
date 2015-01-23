@@ -1,6 +1,9 @@
 (ns onelinejson.core
   (require [clojure.data.json :as json]))
 
+(defn fuu [handler]
+  println "FFfUUUUU")
+
 (defn wrap-logger [handler]
   (fn [request]
     (let [start (System/currentTimeMillis)]
