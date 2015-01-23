@@ -1,4 +1,5 @@
-(ns onelinejson.core)
+(ns onelinejson.core
+  (require [clojure.data.json :as json]))
 
 (defn wrap-with-logger [handler]
   (fn [request]
