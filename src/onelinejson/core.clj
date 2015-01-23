@@ -22,5 +22,5 @@
                              "params" (get request :query-string)
                              "ip" (get request :remote-addr)}
                   }]
-        println (json/write-str data)
+        (println (json/write-str data))
         response))))
