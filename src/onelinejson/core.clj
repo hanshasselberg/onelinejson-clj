@@ -23,5 +23,5 @@
       (let [response (handler request)
             finish (System/currentTimeMillis)
             duration  (- finish start)]
-        (json/write-str (log-data request response duration))
+        (println (json/write-str (log-data request response duration)))
         response))))
