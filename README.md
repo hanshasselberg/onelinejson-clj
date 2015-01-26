@@ -4,7 +4,12 @@ A Clojure library designed to log one line of json for each request.
 
 ## Usage
 
-FIXME
+## Testing
+
+```
+lein midje
+lein midje :autotest
+```
 
 ## License
 
