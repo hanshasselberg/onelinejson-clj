@@ -3,10 +3,8 @@
 
 (defn sanitize-headers
   [headers]
-  (let [excludes #"^(cache-.*|connection|version|pragma|accept-language|referer|cookie|authorization|x-access-token|.*hidden.*)$"
-        sanitized (into {} (filter (fn [header] (nil? (re-matches excludes (key header))))
-                                   headers))]
-    sanitized))
+  (let [excludes #"^(cache-.*|connection|version|pragma|accept-language|referer|cookie|authorization|x-access-token|.*hidden.*)$"]
+    (remove (fn [header] (re-matches excludes (key header))) headers)))
 
 (defn log-data
   [request response duration]
