@@ -5,7 +5,7 @@
   "Omits sensitive or noisy headers."
   [headers]
   (let [excludes #"^(cache-.*|connection|version|pragma|accept-language|referer|cookie|authorization|x-access-token|.*hidden.*)$"]
-    (remove (fn [header] (re-matches excludes (key header))) headers)))
+    (into {} (remove (fn [header] (re-matches excludes (key header))) headers))))
 
 (defn data
   "Generates map conforming to the onelinejson format from request, response and duration to be printed later."
