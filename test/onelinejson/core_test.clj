@@ -14,3 +14,17 @@
          (fact "it removes " + header
                (sanitize-headers {header "1"})
                => ())))
+
+(facts "about core/wrap-logger"
+       (fact "it returns response"
+             (let [request 1
+                   response 2
+                   handler (fn [request] response)]
+             ((wrap-logger handler) request)
+             => response)))
+
+; (facts "about core/log"
+;        (fact "it prints json"
+;              (log {"request" "fubar"})
+;              => nil
+;              (provided (println "{\"request\": \"fubar\"}") => nil)))
