@@ -8,6 +8,7 @@
 
 (defn log-data
   [request response duration]
+  (println request)
   { "debug_info" {}
    "response" { "status" (get response :status)
                "duration" duration}
