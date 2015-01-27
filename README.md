@@ -7,7 +7,6 @@ A Clojure library designed to log one line of json for each request.
 ## Testing
 
 ```
-lein midje
 lein midje :autotest
 ```
 
